@@ -1,0 +1,2 @@
+name     = "aztf"
+location = "westus"
