@@ -1,11 +1,11 @@
-
+/*
 module "clicky" {
 
   source = "../../modules/vm/instance/linux/baseline"
 
   hostname            = "vm${var.name}${random_string.name.result}02"
   resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  location            = "eastus"
   vm_size             = "Standard_D4s_v5"
   admin_username      = "azureuser"
   admin_ssh_key       = tls_private_key.ssh_key.public_key_openssh
@@ -18,4 +18,4 @@ module "clicky" {
     sku       = "20_04-lts-gen2"
     version   = "latest"
   }
-}
+}*/
