@@ -25,6 +25,8 @@ module "vm1" {
   }
 }
 
+
+# DCR association
 resource "azurerm_monitor_data_collection_rule_association" "vm1" {
 
   target_resource_id      = module.vm1.id
@@ -33,7 +35,17 @@ resource "azurerm_monitor_data_collection_rule_association" "vm1" {
   description             = "Association of data collection rule for VM Insights."
 
 }
+/*
+# DCE Association
+resource "azurerm_monitor_data_collection_rule_association" "vm1" {
 
+  target_resource_id          = module.vm1.id
+  data_collection_endpoint_id = module.hub_spoke_monitor.data_collection_endpoints["westus"].id
+  name                        = "configurationAccessEndpoint"
+  description                 = "Association of data collection rule for VM Insights."
+
+}
+*/
 
 module "vm2" {
 
@@ -56,6 +68,8 @@ module "vm2" {
   }
 }
 
+
+# DCR association
 resource "azurerm_monitor_data_collection_rule_association" "vm2" {
 
   target_resource_id      = module.vm2.id
@@ -64,3 +78,15 @@ resource "azurerm_monitor_data_collection_rule_association" "vm2" {
   description             = "Association of data collection rule for VM Insights."
 
 }
+
+/*
+# DCE Association
+resource "azurerm_monitor_data_collection_rule_association" "vm2" {
+
+  target_resource_id          = module.vm2.id
+  data_collection_endpoint_id = module.hub_spoke_monitor.data_collection_endpoints["eastus"].id
+  name                        = "configurationAccessEndpoint"
+  description                 = "Association of data collection rule for VM Insights."
+
+}
+*/
