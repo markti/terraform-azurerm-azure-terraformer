@@ -5,7 +5,7 @@ resource "azurerm_resource_group" "main" {
 
 module "log_analytics_workspace" {
 
-  source = "../../modules/monitor/log-analytics/workspace"
+  source = "../../../modules/monitor/log-analytics/workspace"
 
   name                = var.name
   resource_group_name = azurerm_resource_group.main.name
@@ -14,7 +14,7 @@ module "log_analytics_workspace" {
 
 module "collection_rule" {
 
-  source = "../../modules/monitor/data-collection/rule/linux-shim"
+  source = "../../../modules/monitor/data-collection/rule/linux-shim"
 
   name                       = "dcr-${var.name}"
   resource_group_id          = azurerm_resource_group.main.id
