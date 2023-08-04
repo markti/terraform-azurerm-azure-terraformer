@@ -5,8 +5,9 @@ variable "location" {
   description = "The location/region where the virtual network is created. Changing this forces a new resource to be created."
 }
 variable "fault_domain" {
-  type    = number
-  default = null
+  type        = number
+  default     = null
+  description = "Platform Fault Domain"
 }
 variable "zone" {
   type    = number
