@@ -1,14 +1,16 @@
 module "regions" {
-  source  = "Azure/regions/azurerm"
-  version = "0.5.1"
+  source          = "Azure/regions/azurerm"
+  version         = "0.5.1"
+  use_cached_data = true
 }
 
 locals {
-  us_regions = [for region in module.regions : region if region.geography_group == var.geography_group]
+  matches = [
+    for v in module.regions.regions_by_geography_group[var.geography_group] : v
+  ]
 }
 
-# Random selection
 resource "random_shuffle" "us_region" {
-  input        = [for region in local.us_regions : region.name]
-  result_count = 1
+  input        = [for v in local.matches : v.name]
+  result_count = var.quantity
 }
