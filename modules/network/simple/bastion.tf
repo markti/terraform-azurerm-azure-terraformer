@@ -1,4 +1,4 @@
-resource azurerm_public_ip bastion {
+resource "azurerm_public_ip" "bastion" {
   name                = "pip-${var.name}"
   location            = var.location
   resource_group_name = var.resource_group_name
@@ -6,7 +6,7 @@ resource azurerm_public_ip bastion {
   sku                 = "Standard"
 }
 
-resource azurerm_bastion_host main {
+resource "azurerm_bastion_host" "main" {
   name                = "bas-${var.name}"
   location            = var.location
   resource_group_name = var.resource_group_name
