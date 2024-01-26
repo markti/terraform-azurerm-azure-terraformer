@@ -5,6 +5,6 @@ module "region" {
   quantity        = 2
 }
 
-output "region" {
+output "result" {
   value = module.region.result
 }
