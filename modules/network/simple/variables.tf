@@ -1,9 +1,9 @@
-variable location {
+variable "location" {
   type = string
 }
-variable name {
+variable "name" {
   type = string
 }
-variable resource_group_name {
+variable "resource_group_name" {
   type = string
 }
