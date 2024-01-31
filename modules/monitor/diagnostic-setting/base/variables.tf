@@ -24,8 +24,3 @@ variable "metrics" {
   type    = list(any)
   default = ["AllMetrics"]
 }
-variable "retention_period" {
-  type        = number
-  default     = null
-  description = "The number of days to retain logs. By default, if not specified, no retention policy is set."
-}
