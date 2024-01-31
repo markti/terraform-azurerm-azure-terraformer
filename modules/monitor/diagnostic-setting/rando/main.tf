@@ -15,6 +15,5 @@ module "main" {
   storage_account_id         = var.storage_account_id
   logs                       = var.logs
   metrics                    = var.metrics
-  retention_period           = var.retention_period
 
 }
