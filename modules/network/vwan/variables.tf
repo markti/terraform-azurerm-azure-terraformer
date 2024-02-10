@@ -11,5 +11,5 @@ variable "primary_address_prefix" {
   type = string
 }
 variable "additional_regions" {
-  type = map()
+  type = map(string)
 }
