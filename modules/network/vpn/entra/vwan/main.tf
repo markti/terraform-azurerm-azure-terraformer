@@ -2,16 +2,16 @@
 resource "azurerm_public_ip" "vpn" {
 
   name                = "pip-vpng-${var.name}"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = var.resource_group_name
+  location            = var.location
   allocation_method   = "Static"
 
 }
 
 resource "azurerm_point_to_site_vpn_gateway" "p2s_config" {
   name                = "vpng-${var.name}"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = var.resource_group_name
+  location            = var.location
 
   virtual_hub_id              = azurerm_virtual_hub.primary.id
   vpn_server_configuration_id = azurerm_vpn_server_configuration.p2s_config.id
@@ -28,8 +28,8 @@ resource "azurerm_point_to_site_vpn_gateway" "p2s_config" {
 resource "azurerm_vpn_server_configuration" "p2s_config" {
 
   name                = "vpng-${var.name}"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = var.resource_group_name
+  location            = var.location
 
   vpn_authentication_types = ["AAD"]
   vpn_protocols            = ["OpenVPN"]
