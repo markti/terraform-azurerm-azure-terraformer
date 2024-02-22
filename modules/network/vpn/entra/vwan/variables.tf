@@ -16,3 +16,6 @@ variable "tenant_id" {
 variable "audience" {
   type = string
 }
+variable "virtual_hub_id" {
+  type = string
+}
