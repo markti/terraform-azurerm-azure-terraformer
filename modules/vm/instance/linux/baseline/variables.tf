@@ -13,6 +13,10 @@ variable "zone" {
   type    = number
   default = null
 }
+variable "availability_set_id" {
+  type    = string
+  default = null
+}
 variable "virtual_machine_scale_set_id" {
   type    = string
   default = null

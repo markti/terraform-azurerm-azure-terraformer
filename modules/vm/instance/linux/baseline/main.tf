@@ -24,6 +24,7 @@ resource "azurerm_linux_virtual_machine" "main" {
   disable_password_authentication = true
   source_image_id                 = var.vm_image_id
   virtual_machine_scale_set_id    = var.virtual_machine_scale_set_id
+  availability_set_id             = var.availability_set_id
   tags                            = var.tags
 
   admin_ssh_key {
